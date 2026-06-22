@@ -40,8 +40,8 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.5);
-  z-index:-1;
+  background:rgba(0,0,0,0.45);
+  z-index:0;
 }
 
 /* ===== الحاوية ===== */
@@ -53,8 +53,10 @@ body::before{
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
   animation:slideUp 0.8s ease;
-}
 
+  position:relative;
+  z-index:1;
+}
 /* ===== الهيدر ===== */
 header{
   display:flex;
