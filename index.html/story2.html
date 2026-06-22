@@ -6,7 +6,6 @@
 
 <title>الدولة السعودية الثانية</title>
 
-<!-- خط Cairo -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +16,6 @@
   --purple:#8A73B3;
 }
 
-/* ===== الصفحة ===== */
 *{
   margin:0;
   padding:0;
@@ -31,10 +29,9 @@ body{
   background-position:center;
   background-attachment:fixed;
   min-height:100vh;
-  position:relative;
 }
 
-/* طبقة تغميق للخلفية */
+/* تغميق الخلفية */
 body::before{
   content:"";
   position:fixed;
@@ -43,69 +40,24 @@ body::before{
   z-index:-1;
 }
 
-/* ===== الصندوق ===== */
+/* الصندوق */
 .content{
-  border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(5px);
-
   max-width:900px;
   margin:50px auto;
   background:rgba(255,255,255,0.92);
   padding:35px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  animation:slideUp 0.8s ease;
 }
 
-@media (max-width: 768px){
-
-  body{
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-  }
-
-  .content{
-    width: 90%;
-    margin: 18px auto;
-    padding: 18px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(6px);
-  }
-
-  h1{
-    font-size: 22px;
-  }
-
-  button{
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  p{
-    font-size: 16px;
-    line-height: 2;
-  }
-}
-
-  .content{
-    width: 85%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
-  }
-
-}
-
-/* ===== الهيدر ===== */
+/* الهيدر */
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  margin-bottom:20px;
   padding-bottom:15px;
   border-bottom:2px solid #eee;
-  margin-bottom:20px;
 }
 
 h1{
@@ -113,7 +65,7 @@ h1{
   font-size:28px;
 }
 
-/* زر الرجوع */
+/* أزرار */
 button{
   background:transparent;
   border:2px solid var(--purple);
@@ -127,8 +79,14 @@ button{
 
 button:hover{
   background:var(--purple);
-  color:white;
-  transform:scale(1.05);
+  color:#fff;
+}
+
+/* نخلي أزرار A+ و A- جنب بعض */
+.buttons{
+  display:flex;
+  gap:10px;
+  margin:10px 0;
 }
 
 /* النص */
@@ -138,15 +96,32 @@ p{
   color:#333;
 }
 
-/* ===== أنيميشن ===== */
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
+/* الجوال */
+@media (max-width:768px){
 
-@keyframes slideUp{
-  from{transform:translateY(30px); opacity:0;}
-  to{transform:translateY(0); opacity:1;}
+  body{
+    background-attachment:scroll;
+  }
+
+  .content{
+    width:90%;
+    margin:20px auto;
+    padding:18px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  button{
+    font-size:14px;
+    padding:6px 12px;
+  }
+
+  p{
+    font-size:16px;
+    line-height:2;
+  }
 }
 </style>
 </head>
@@ -159,19 +134,21 @@ p{
 <h1 id="title">الدولة السعودية الثانية</h1>
 <button onclick="history.back()">رجوع</button>
 </header>
+
 <button onclick="playAudio()">🔊 اسمع القصة</button>
 
-<button onclick="increaseFont()">A+</button>
-<button onclick="decreaseFont()">A-</button>
+<!-- هنا حل مشكلة الأزرار -->
+<div class="buttons">
+  <button onclick="increaseFont()">A+</button>
+  <button onclick="decreaseFont()">A-</button>
+</div>
 
 <audio id="audioPlayer">
   <source src="السعودية الثانية.mp3" type="audio/mpeg">
 </audio>
 
-
-
 <p id="storyText">
-  الحلم الذي عاد من جديد<br><br>
+ الحلم الذي عاد من جديد<br><br>
 
 بعد سقوط الدرعية عام 1818م، ظن الكثير أن قصة الدولة السعودية انتهت.
 
@@ -378,25 +355,15 @@ p{
 </div>
 
 <script>
-// حركة بسيطة للعنوان
-window.onload = () => {
-  document.querySelector("h1").style.transform = "scale(1.05)";
-  setTimeout(()=>{
-    document.querySelector("h1").style.transform = "scale(1)";
-  },300);
-};
-</script>
-<script>
-function playAudio() {
-    const audio = document.getElementById("audioPlayer");
-
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
+function playAudio(){
+  const audio = document.getElementById("audioPlayer");
+  if(audio.paused){
+    audio.play();
+  }else{
+    audio.pause();
+  }
 }
 </script>
-<script src="script.js"></script>
+
 </body>
 </html>
