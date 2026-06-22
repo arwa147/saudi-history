@@ -46,6 +46,9 @@ body::before{
 
 /* ===== الحاوية ===== */
 .content{
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+
   max-width:900px;
   margin:50px auto;
   background:rgba(255,255,255,0.92);
@@ -57,13 +60,37 @@ body::before{
   position:relative;
   z-index:1;
 }
-  @media (max-width: 768px){
+ @media (max-width: 768px){
 
   body{
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
   }
+
+  .content{
+    width: 92%;
+    margin: 18px auto;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(6px);
+  }
+
+  h1{
+    font-size: 22px;
+  }
+
+  button{
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 2;
+  }
+}
 
   .content{
     width: 90%;
