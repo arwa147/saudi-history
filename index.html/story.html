@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>القصة</title>
+
+<!-- خط Cairo -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#006C35;
+  --purple:#8A73B3;
+  --white:#fff;
+}
+
+/* ===== الصفحة ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cairo', sans-serif;
+}
+
+body{
+  background-image:url("السعودية.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  min-height:100vh;
+  animation:fadeIn 1s ease;
+}
+
+/* طبقة شفافة فوق الصورة */
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.35);
+  z-index:-1;
+}
+
+/* ===== الحاوية ===== */
+.content{
+  max-width:900px;
+  margin:50px auto;
+  background:rgba(255,255,255,0.92);
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:slideUp 0.8s ease;
+}
+
+/* ===== الهيدر ===== */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+  padding-bottom:15px;
+  border-bottom:2px solid #eee;
+}
+
+h1{
+  color:var(--green);
+  font-size:28px;
+}
+
+/* زر الرجوع */
+button{
+  background:transparent;
+  border:2px solid var(--purple);
+  color:var(--purple);
+  padding:8px 18px;
+  border-radius:25px;
+  cursor:pointer;
+  transition:0.3s;
+  font-weight:bold;
+}
+
+button:hover{
+  background:var(--purple);
+  color:white;
+  transform:scale(1.05);
+}
+
+/* ===== النص ===== */
+p{
+  margin-top:20px;
+  line-height:2.2;
+  font-size:18px;
+  color:#333;
+}
+
+/* ===== أنيميشن ===== */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes slideUp{
+  from{transform:translateY(30px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+<header>
+<h1 id="title">الدولة السعودية الأولى</h1>
+<button onclick="history.back()">رجوع</button>
+</header>
+<button onclick="playAudio()">🔊 اسمع القصة</button>
+
+<button onclick="increaseFont()">A+</button>
+<button onclick="decreaseFont()">A-</button>
+
+<audio id="audioPlayer">
+  <source src="السعودية الاولى.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<div id="story">
+<p id="storyText">
+في قلب نجد بدأت القصة...
+<br><br>
+الدولة السعودية الأولى: حكاية بدأت من الدرعية وغيّرت وجه الجزيرة العربية
+
+في قلب نجد، وبين وادي حنيفة، وُلدت مدينة صغيرة اسمها الدرعية… لم تكن تبدو مختلفة عن باقي القرى، لكنها كانت تحمل في داخلها بداية قصة أكبر من حدود المكان.
+
+قبلها بسنوات، استقر مانع المريدي في هذه الأرض بعد أن جاء من حجر اليمامة بدعوة من ابن عمه ابن درع، ومن هنا بدأت ملامح الدرعية الأولى تتشكل، كأنها بذرة تنتظر من يوقظها.
+
+ومع مرور الزمن، وصلت الإمارة إلى رجل سيغيّر كل شيء
+
+إنه:
+الإمام محمد بن سعود
+
+كان ذلك عام 1727م.
+
+لم تكن إمارة ضخمة، ولا تملك قوة هائلة… لكنها كانت تملك شيئًا أهم: فكرة.
+<br>
+
+فكرة تقول إن هذه الأرض يمكن أن تكون أكثر أمنًا، وأكثر استقرارًا، وأكثر وحدة.
+ <br><br>
+
+1744م: اللحظة التي بدأت منها الدولة
+
+في عام 1744م وصل إلى الدرعية رجل اسمه الشيخ محمد بن عبد الوهاب.
+
+لم يكن مجرد لقاء عابر… بل كان بداية مشروع كامل.
+
+عندما التقيا، قال الإمام محمد بن سعود:
+
+“أبشر ببلاد الخير، وأبشر بالعز والمنعة”
+
+فأجابه الشيخ:
+
+“وأبشرك بالعز والتمكين… من تمسك بلا إله إلا الله ملك بها البلاد والعباد”
+
+ومن هنا وُلد ميثاق الدرعية… التحالف الذي صنع دولة جديدة من قلب الصحراء.
+
+<br><br>
+
+كيف بدأت الدولة تكبر؟
+
+لم تبقَ الدرعية صغيرة طويلًا… بدأت تتوسع خطوة خطوة، كأنها موجة تكبر كلما ابتعدت.
+
+أولًا: نجد
+
+بدأت بلدات العارض وسدير والوشم والمحمل تدخل تحت نفوذ الدولة، بعضًا بالولاء وبعضًا بالمواجهة، لكن النتيجة كانت واحدة:
+الأمن بدأ ينتشر، والخوف بدأ يتراجع.
+
+<br><br>
+
+ثانيًا: الرياض (1187هـ)
+
+في عهد الإمام عبدالعزيز بن محمد بن سعود تم ضم الرياض، فازدادت قوة الدولة في قلب نجد وأصبحت أكثر تماسكًا.
+
+<br>
+
+ثالثًا: التوسع شمالًا
+
+اتجهت الدولة إلى القصيم، حيث بريدة وعنيزة، لأنها كانت طريق التجارة والحج، فازدادت أهمية الدولة وموقعها الاستراتيجي.
+
+<br>
+
+رابعًا: التوسع شرقًا
+
+في الشرق، وصلت الدولة إلى الأحساء، ثم امتد تأثيرها إلى سواحل الخليج، فدخل المال والتجارة إلى الدولة بشكل أكبر، وأصبحت أقوى اقتصاديًا.
+
+<br>
+
+خامسًا: التوسع جنوبًا
+
+امتد النفوذ إلى نجران وأجزاء من عسير، لتأمين الطرق وربط أطراف الجزيرة العربية.
+
+<br>
+
+سادسًا: الحجاز… ذروة القوة
+
+في عهد سعود بن عبدالعزيز وصلت الدولة إلى أقوى مراحلها، ودخلت:
+
+* مكة المكرمة
+* المدينة المنورة
+
+وأصبحت الدولة تتحكم في أهم مناطق الجزيرة العربية، حتى أصبح اسمها معروفًا في كل مكان.
+
+<br>
+
+بداية التحدي الكبير
+
+كلما كبرت الدولة، كبرت حولها المخاوف.
+
+وفي النهاية، بدأت الحملات العثمانية بقيادة إبراهيم باشا تتحرك نحو نجد.
+
+مدينة بعد مدينة بدأت تسقط، حتى اقتربت من الدرعية.
+
+<br>
+
+1818م: حصار الدرعية والتضحية الكبرى
+
+حوصرت الدرعية حصارًا طويلًا وقاسيًا.
+
+داخل المدينة كان الوضع يزداد صعوبة:
+
+* القتال مستمر
+* الموارد تقل
+* والضغط يزداد يومًا بعد يوم
+
+وكان يقود هذه المرحلة:
+الإمام عبدالله بن سعود
+
+صمدت الدرعية بكل ما فيها من قوة، وكأنها تدافع عن فكرة لا مدينة فقط.
+
+لكن بعد شهور من الحصار، وصلت المدينة إلى لحظة الإنهاك.
+
+وفي لحظة تاريخية ثقيلة، خرج الإمام عبدالله بن سعود من الدرعية، متجهًا إلى المعسكر.
+
+لم يكن استسلامه ضعفًا… بل كان قرارًا صعبًا لإيقاف الدماء داخل المدينة.
+
+وسلّم نفسه، لتنتهي الدولة السعودية الأولى سياسيًا عام 1818م، وتسقط الدرعية بعد مقاومة عظيمة.
+
+لكن النهاية لم تكن نهاية فعلية…
+
+<br><br>
+
+النهاية التي لم تكن نهاية
+
+بعد سقوط الدرعية، ظن الكثير أن القصة انتهت.
+
+لكن في عمق الجزيرة العربية، كان هناك رجل يرفض هذا الاعتقاد…
+
+إنه:
+الإمام تركي بن عبد الله
+
+لم يسلم نفسه، ولم يقبل أن يكون ما حدث نهاية التاريخ.
+
+اختفى، وتحرك بصمت، وجمع من بقي يؤمن بفكرة الدولة.
+
+كان يحمل فكرة واحدة فقط:
+أن الدولة يمكن أن تولد من جديد.
+
+وبعد سنوات، عاد إلى الرياض، واستعادها، وبدأ منها فصل جديد من التاريخ…
+
+بداية الدولة السعودية الثانية
+</p>
+</div>
+
+<!-- JavaScript بسيط -->
+<script>
+const title = document.getElementById("title");
+
+window.onload = () => {
+  title.style.transform = "scale(1.05)";
+  setTimeout(() => {
+    title.style.transform = "scale(1)";
+  }, 300);
+};
+</script>
+<script>
+function playAudio() {
+    const audio = document.getElementById("audioPlayer");
+    audio.play();
+}
+</script>
+<script>
+function playAudio() {
+    const audio = document.getElementById("audioPlayer");
+
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>

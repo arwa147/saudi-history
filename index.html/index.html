@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>حكايا وحضارة</title>
+
+<!-- خط Cairo -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#006C35;
+  --purple:#8A73B3;
+  --bg:#F4F1FA;
+  --white:#fff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cairo', sans-serif;
+}
+
+body{
+  background:var(--bg);
+}
+
+/* ===== الهيدر ===== */
+header{
+  background:var(--green);
+  color:white;
+  padding:18px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+header h2{
+  font-size:22px;
+  letter-spacing:1px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--purple);
+}
+
+/* ===== الهيرو ===== */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,var(--green),var(--purple));
+  color:white;
+  padding:20px;
+  animation:fadeIn 1.2s ease;
+}
+
+.hero h1{
+  font-size:40px;
+  margin-bottom:10px;
+  animation:slideDown 1s ease;
+}
+
+.hero p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+/* زر */
+.hero a{
+  margin-top:25px;
+  background:white;
+  color:var(--green);
+  padding:12px 28px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.hero a:hover{
+  transform:scale(1.05);
+  background:var(--purple);
+  color:white;
+}
+
+/* ===== أنيميشن ===== */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes slideDown{
+  from{transform:translateY(-20px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>حكايا وحضارة</h2>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="library.html">المكتبة</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 id="title">حكايا وحضارة</h1>
+  <p>رحلة بين الماضي والحاضر، نروي فيها قصص المملكة ونستكشف حضارتها وتراثها العريق</p>
+  <a href="library.html">ابدأ الرحلة</a>
+</section>
+
+<!-- JavaScript بسيط احترافي -->
+<script>
+
+setInterval(() => {
+  i = (i + 1) % texts.length;
+  title.textContent = texts[i];
+}, 3000);
+</script>
+
+</body>
+</html>
