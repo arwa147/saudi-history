@@ -32,23 +32,23 @@ body{
   background-position:center;
   background-attachment:fixed;
   min-height:100vh;
-  position:relative;
+  animation:fadeIn 1s ease;
 }
 
 /* طبقة شفافة فوق الصورة */
 body::before{
   content:"";
   position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  z-index:0;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.35);
+  z-index:-1;
 }
 
 /* ===== الحاوية ===== */
 .content{
-  border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(5px);
-
   max-width:900px;
   margin:50px auto;
   background:rgba(255,255,255,0.92);
@@ -56,50 +56,8 @@ body::before{
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
   animation:slideUp 0.8s ease;
-
-  position:relative;
-  z-index:1;
-}
- @media (max-width: 768px){
-
-  body{
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-  }
-
-  .content{
-    width: 92%;
-    margin: 18px auto;
-    padding: 18px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(6px);
-  }
-
-  h1{
-    font-size: 22px;
-  }
-
-  button{
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  p{
-    font-size: 16px;
-    line-height: 2;
-  }
 }
 
-  .content{
-    width: 90%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
-  }
-
-}
 /* ===== الهيدر ===== */
 header{
   display:flex;
@@ -127,9 +85,6 @@ button{
   font-weight:bold;
 }
 
-  header button{
-  margin-right:auto;
-}
 button:hover{
   background:var(--purple);
   color:white;
