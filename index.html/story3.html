@@ -27,12 +27,11 @@
 
 body{
   background-image:url("السعودية الثالثة.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
   min-height:100vh;
-  position:relative;
+  animation:fadeIn 1s ease;
 }
 
 /* تغميق الخلفية */
@@ -48,44 +47,13 @@ body::before{
 .content{
   max-width:900px;
   margin:50px auto;
-  background:rgba(255,255,255,0.95);
+  background:rgba(255,255,255,0.92);
   padding:35px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
-position:relative;
+  animation:slideUp 0.8s ease;
 }
 
-  @media (max-width: 768px){
-
-  body{
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-  }
-
-  .content{
-    width: 88%;
-    margin: 20px auto;
-    padding: 18px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.90);
-  }
-
-  h1{
-    font-size: 22px;
-  }
-
-  button{
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  p{
-    font-size: 16px;
-    line-height: 2;
-  }
-}
-  
 /* ===== الهيدر ===== */
 header{
   display:flex;
